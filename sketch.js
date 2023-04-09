@@ -2,6 +2,7 @@ let screens = []; // arreglo para guardar las imágenes
 let currentScreen = 5; //imagen actual
 
 
+
 function preload() {
     //suben las imágenes en una nueva posición
     screens[0] = loadImage('./images/menu.png');
@@ -56,7 +57,7 @@ function mousePressed() {
 }
 
 function returnPerfil() {
-    if (currentScreen > 10 + 4 && currentScreen < 10 + 11) {
+    if (currentScreen > 10 + 4 && currentScreen < 10 + 15) {
         button({
             xButton: 20,
             yButton: 20,
@@ -148,15 +149,15 @@ function nav() {
     }
 
     if (currentScreen === 4) {
-    button({ //Microcredito
-        xButton: 0,
-        yButton: 382,
-        wButton: 390,
-        hButton: 58,
-        screen: 5 // cambien el numero de acuerdo a lo que necesiten 
-    })
+        button({ //Microcredito
+            xButton: 0,
+            yButton: 382,
+            wButton: 390,
+            hButton: 58,
+            screen: 5 // cambien el numero de acuerdo a lo que necesiten 
+        })
 
-}
+    }
 
 }
 
@@ -315,7 +316,40 @@ function changeScreen() {
             }
             break;
 
+        case 15:
 
-    }
+
+        setTimeout(() => {
+            
+            button({
+                xButton: 16 ,
+                yButton: 270 ,
+                wButton: 351,
+                hButton: 121,
+                screen: 23  // cambien el numero de acuerdo a lo que necesiten 
+            });
+
+            button({
+                xButton: 16 ,
+                yButton: 481 ,
+                wButton: 351,
+                hButton: 111,
+                screen: 24 // cambien el numero de acuerdo a lo que necesiten 
+            }); 
+            
+            button({
+                xButton: 16 ,
+                yButton: 800 ,
+                wButton: 351,
+                hButton: 121,
+                screen: 17  // cambien el numero de acuerdo a lo que necesiten 
+            });
+            
+        }, 70);
+
+           break;
+
+
+        }
 
 }
