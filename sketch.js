@@ -311,7 +311,7 @@ function nav() {
     }
     }
 
-}
+
 
 // pongan los otros botones aqui 
 function changeScreen() {
