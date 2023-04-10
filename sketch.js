@@ -1,15 +1,5 @@
 let screens = []; // arreglo para guardar las imágenes
 let currentScreen = 5; //imagen actual
-let boton_position = 0;
-let this_scroll = 0;
-let tut_posX = 131;
-let tut_posx2 = 109;
-let pasos_tut;
-
-let logo = [];
-let section_salvalogo = [];
-let salvalogo_status = 1;
-let section_salvalogo_status = 2;
 
 
 function preload() {
@@ -134,7 +124,7 @@ function show_salvalogo() {
 
 
 function returnPerfil() {
-    if (currentScreen > 10 + 4 && currentScreen < 10 + 11) {
+    if (currentScreen > 10 + 4 && currentScreen < 10 + 15) {
         button({
             xButton: 20,
             yButton: 20,
@@ -318,6 +308,7 @@ function nav() {
             screen: 5 // cambien el numero de acuerdo a lo que necesiten 
         })
 
+    }
     }
 
 }
@@ -568,6 +559,6 @@ function changeScreen() {
             break;
 
 
-    }
+        }
 
 }
