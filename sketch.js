@@ -1,5 +1,15 @@
 let screens = []; // arreglo para guardar las imágenes
 let currentScreen = 5; //imagen actual
+let boton_position = 0;
+let this_scroll = 0;
+let tut_posX = 131;
+let tut_posx2 = 109;
+let pasos_tut;
+
+let logo = [];
+let section_salvalogo = [];
+let salvalogo_status = 1;
+let section_salvalogo_status = 2;
 
 
 function preload() {
@@ -52,7 +62,7 @@ function draw() {
     fill("Salmon");
     textSize(16);
     textAlign(CENTER);
-    text("(" + floor(mouseX) + ", " + floor(mouseY) + ")", mouseX, mouseY);
+    
     salvalogo_position();
     show_salvalogo();
 
