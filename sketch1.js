@@ -1,5 +1,5 @@
 let screens = []; // arreglo para guardar las imágenes
-let currentScreen = 5; //imagen actual
+let currentScreen = 0; //imagen actual
 let boton_position = 0;
 let this_scroll = 0;
 let tut_posX = 131;
@@ -10,7 +10,6 @@ let logo = [];
 let section_salvalogo = [];
 let salvalogo_status = 1;
 let section_salvalogo_status = 2;
-
 
 function preload() {
     //suben las imágenes en una nueva posición
@@ -47,11 +46,12 @@ function preload() {
     section_salvalogo[1] = loadImage('./images/Boton/la_seño_explica.png');
 
     pasos_tut = loadImage('./images/Boton/pasos_tut.png');
-
 }
 
 function setup() {
+
     section_salvalogo[2] = null
+
 
 }
 
@@ -66,8 +66,6 @@ function draw() {
     salvalogo_position();
     show_salvalogo();
 
-
-
 }
 
 //para los clicks
@@ -76,14 +74,15 @@ function mousePressed() {
     nav();
     changeScreen();
     returnPerfil();
+
     if (salvalogo_status === 0 && section_salvalogo_status === 1) {
-        tut_posx2 -= (256 + 382)
+        tut_posx2 -= (256+382)
         if (tut_posx2 < -2850) {
             section_salvalogo_status = 0
             tut_posx2 = 109
-
+            
         }
-    }
+     }
 
     button_salvalogo(
 
@@ -120,21 +119,20 @@ function show_salvalogo() {
 
     if (section_salvalogo_status < 2) {
         image(section_salvalogo[section_salvalogo_status], tut_posX, boton_position - 230);
-
-
+        
+        
     }
-    if (section_salvalogo_status === 1) {
+        if (section_salvalogo_status === 1) {
         tut_posX = 0
         image(pasos_tut, tut_posx2, boton_position - 230);
     } else {
         tut_posX = 131
     }
-
+    
 }
 
-
 function returnPerfil() {
-    if (currentScreen > 10 + 4 && currentScreen < 10 + 11) {
+    if (currentScreen > 10 + 4 && currentScreen < 10 + 15) {
         button({
             xButton: 20,
             yButton: 20,
@@ -144,7 +142,6 @@ function returnPerfil() {
         });
     }
 }
-
 
 window.addEventListener('scroll', (e) => {
     this_scroll = this.scrollY;
@@ -184,6 +181,7 @@ function button({
     }
 }
 
+
 function button_tutorial({
     xButton, //posición x
     yButton, //posición y
@@ -201,7 +199,6 @@ function button_tutorial({
     }
 }
 
-
 function button_tutorial2({
     xButton, //posición x
     yButton, //posición y
@@ -214,7 +211,7 @@ function button_tutorial2({
 
 
         if (salvalogo_status === 0 && section_salvalogo_status === 1) {
-            // tut_posx2 += (257+391)
+           // tut_posx2 += (257+391)
         }
     }
 }
@@ -351,63 +348,6 @@ function changeScreen() {
             break;
 
         case 5:
-            buttonToScroll({ //Caracteristicas vinculo
-                xButton: 0,
-                yButton: 594,
-                wButton: 390,
-                hButton: 58,
-                toMove: 1000
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-            buttonToScroll({ //Requisitos vinculo
-                xButton: 0,
-                yButton: 658,
-                wButton: 390,
-                hButton: 58,
-                toMove: 1548
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-            buttonToScroll({ //Solicitar mi credito vinculo
-                xButton: 0,
-                yButton: 722,
-                wButton: 390,
-                hButton: 58,
-                toMove: 2234
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-            buttonToScroll({ //Quiero cancelar mi credito vinculo
-                xButton: 0,
-                yButton: 766,
-                wButton: 390,
-                hButton: 58,
-                toMove: 3584
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-            buttonToScroll({ //Tasas y tarifas vinculo
-                xButton: 0,
-                yButton: 850,
-                wButton: 390,
-                hButton: 58,
-                toMove: 3904
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-
-            buttonToScroll({ //Solicita tu credito aqui vinculo
-                xButton: 0,
-                yButton: 914,
-                wButton: 390,
-                hButton: 58,
-                toMove: 4327
-
-                // cambien el numero de acuerdo a lo que necesiten 
-            })
-
-
             button({ //Información Pagahorro
                 xButton: 0,
                 yButton: 1479.49,
@@ -429,6 +369,14 @@ function changeScreen() {
                 wButton: 295,
                 hButton: 40,
                 screen: 8 // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            buttonToScroll({
+                xButton: 0,
+                yButton: 657,
+                wButton: 390,
+                hButton: 70,
+                toMove: 1400
             })
 
             break;
