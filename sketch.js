@@ -76,6 +76,10 @@ function draw() {
 
 
 }
+function mouseReleased() {
+    return false; 
+}
+
 
 //para los clicks
 function mousePressed() {
@@ -92,7 +96,7 @@ function mousePressed() {
 
         }
     }
-
+   
     button_salvalogo(
 
         {
