@@ -39,6 +39,9 @@ function preload() {
     screens[12 + 10] = loadImage('./images/dashboard/Mobile-2.png');
     screens[13 + 10] = loadImage('./images/dashboard/Ahorro.png');
     screens[14 + 10] = loadImage('./images/dashboard/Crédito.png');
+    screens[25] = loadImage('./images/publica.png');
+    screens[26] = loadImage('./images/publica.png');
+
 
     logo[0] = loadImage('./images/Boton/Boton_activo.png');
     logo[1] = loadImage('./images/Boton/Boton_inactivo.png');
@@ -62,10 +65,14 @@ function draw() {
     fill("Salmon");
     textSize(16);
     textAlign(CENTER);
-    
-    salvalogo_position();
-    show_salvalogo();
 
+    salvalogo_position();
+
+    if (currentScreen !== 0) {
+        show_salvalogo();
+    }
+
+    console.log(currentScreen)
 
 
 }
@@ -75,6 +82,7 @@ function mousePressed() {
     navBar();
     nav();
     changeScreen();
+    alertBlog();
     returnPerfil();
     if (salvalogo_status === 0 && section_salvalogo_status === 1) {
         tut_posx2 -= (256 + 382)
@@ -166,7 +174,6 @@ function showScreen() {
 //cambio de pantalla
 function screenChanger(screen) {
     currentScreen = screen;
-    posY = 0;
 }
 
 //generador de botones (saquen las posiciones y los tamaños del figma)
@@ -319,9 +326,15 @@ function nav() {
         })
 
     }
+}
+
+function alertBlog() {
+    if (currentScreen === 25) {
+        if(60 < mouseX && mouseX < 320 && 1014 < mouseY && mouseY < 1054){
+            window.alert("Lo sentimos, esta opción aún no está habilitada")
+        }
     }
-
-
+}
 
 // pongan los otros botones aqui 
 function changeScreen() {
@@ -337,18 +350,87 @@ function changeScreen() {
                 screen: 2 // cambien el numero de acuerdo a lo que necesiten 
             })
 
+            button({
+                xButton: 55,
+                yButton: 662,
+                wButton: 195,
+                hButton: 40,
+                screen: 25 // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            button({
+                xButton: 61,
+                yButton: 2947,
+                wButton: 269,
+                hButton: 40,
+                screen: 25
+            })
+            
+            button({
+                xButton: 31,
+                yButton: 756,
+                wButton: 329,
+                hButton: 185,
+                screen: 3 // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            button({
+                xButton: 48,
+                yButton: 1044,
+                wButton: 289,
+                hButton: 104,
+                screen: 3 // cambien el numero de acuerdo a lo que necesiten 
+            })
+            
+
             break;
 
         case 2:
 
-            rect(31, 756, 358, 452)
             button({
                 xButton: 31,
                 yButton: 756,
-                wButton: 328,
-                hButton: 452,
+                wButton: 329,
+                hButton: 185,
                 screen: 3 // cambien el numero de acuerdo a lo que necesiten 
             })
+
+            button({
+                xButton: 48,
+                yButton: 1044,
+                wButton: 289,
+                hButton: 104,
+                screen: 3 // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            button({
+                xButton: 55,
+                yButton: 662,
+                wButton: 195,
+                hButton: 40,
+                screen: 25 // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            button({ //devolverse en publica tu historia
+                xButton: 22,
+                yButton: 201,
+                wButton: 16,
+                hButton: 16,
+                screen: 2
+            })
+
+            break;
+
+        case 3:
+
+            button({ //devolverse en publica tu historia
+                xButton: 22,
+                yButton: 201,
+                wButton: 16,
+                hButton: 16,
+                screen: 2
+            })
+
             break;
 
         case 5:
@@ -568,7 +650,17 @@ function changeScreen() {
 
             break;
 
+        case 25:
+            button({ //devolverse en publica tu historia
+                xButton: 22,
+                yButton: 201,
+                wButton: 16,
+                hButton: 16,
+                screen: 2
+            })
 
-        }
+            break;
+
+    }
 
 }
