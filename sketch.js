@@ -67,6 +67,10 @@ function draw() {
     textAlign(CENTER);
 
     salvalogo_position();
+    fill("Salmon");
+  textSize(16);
+  textAlign(CENTER);
+  text("(" + floor(mouseX) + ", " + floor(mouseY) + ")", mouseX, mouseY);
 
     if (currentScreen !== 0) {
         show_salvalogo();
@@ -494,6 +498,26 @@ function changeScreen() {
                 // cambien el numero de acuerdo a lo que necesiten 
             })
 
+            buttonToScroll({ //Redirección al form (solicita tu credito aqui)
+                xButton: 0,
+                yButton: 514,
+                wButton: 298,
+                hButton: 46,
+                toMove: 4332
+
+                // cambien el numero de acuerdo a lo que necesiten 
+            })
+
+            buttonToScroll({ //Redirección al form (solicitalo aqui)
+                xButton: 0,
+                yButton: 2635,
+                wButton: 164,
+                hButton: 40,
+                toMove: 4332
+
+                // cambien el numero de acuerdo a lo que necesiten 
+            })
+
 
             button({ //Información Pagahorro
                 xButton: 0,
@@ -515,7 +539,28 @@ function changeScreen() {
                 yButton: 4719,
                 wButton: 295,
                 hButton: 40,
-                screen: 8 // cambien el numero de acuerdo a lo que necesiten 
+                screen: 12 // cambien el numero de acuerdo a lo que necesiten 
+            })
+            button({ //Form input Apellido
+                xButton: 0,
+                yButton: 4800,
+                wButton: 295,
+                hButton: 40,
+                screen: 12 // cambien el numero de acuerdo a lo que necesiten 
+            })
+            button({ //Form input Cedula
+                xButton: 135,
+                yButton: 4874,
+                wButton: 295,
+                hButton: 40,
+                screen: 12 // cambien el numero de acuerdo a lo que necesiten 
+            })
+            button({ //Form input Celular
+                xButton: 0,
+                yButton: 4964,
+                wButton: 295,
+                hButton: 40,
+                screen: 12 // cambien el numero de acuerdo a lo que necesiten 
             })
 
             break;
@@ -542,35 +587,7 @@ function changeScreen() {
             })
 
             break;
-        case 8:
-            button({ //Form input Apellido
-                xButton: 0,
-                yButton: 4800,
-                wButton: 295,
-                hButton: 40,
-                screen: 9 // cambien el numero de acuerdo a lo que necesiten 
-            })
-            break;
-        case 9:
-            button({ //Form input Cedula
-                xButton: 135,
-                yButton: 4874,
-                wButton: 295,
-                hButton: 40,
-                screen: 10 // cambien el numero de acuerdo a lo que necesiten 
-            })
-            break;
-        case 10:
-
-            button({ //Form input Celular
-                xButton: 0,
-                yButton: 4964,
-                wButton: 295,
-                hButton: 40,
-                screen: 11 // cambien el numero de acuerdo a lo que necesiten 
-            })
-
-            break;
+  
         case 11:
 
 
@@ -579,7 +596,7 @@ function changeScreen() {
                 yButton: 5192,
                 wButton: 25,
                 hButton: 25,
-                screen: 12 // cambien el numero de acuerdo a lo que necesiten 
+                screen: 13 // cambien el numero de acuerdo a lo que necesiten 
             })
 
 
